@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Living Guide | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Home Page Specific Styles with Better Images - NO @MEDIA QUERIES */
+        
+        /* MAIN BACKGROUND - Beautiful mountain landscape */
+        body.home-page {
+            background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b');
+            background-attachment: scroll;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 100%;
+        }
+        
+        /* White overlay for readability */
+        .page-overlay {
+            background-color: rgba(255, 255, 255, 0.92);
+            width: 100%;
+            min-height: 100vh;
+        }
+        
+        /* HERO SECTION - Stunning nature scene */
+        .main-hero {
+            background: linear-gradient(to right, rgba(45, 80, 22, 0.85), rgba(74, 124, 42, 0.9)), 
+                        url('https://images.unsplash.com/photo-1469474968028-56623f02e42e');
+            background-size: cover;
+            background-position: center center;
+            border-radius: 10px;
+            padding: 70px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            text-align: center;
+            color: white;
+            border: 3px solid white;
+        }
+        
+        .hero-title {
+            font-size: 44px;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+            font-weight: bold;
+        }
+        
+        .hero-text {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 35px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.6;
+        }
+        
+        /* CTA Button */
+        .hero-button {
+            background-color: #6ba842;
+            color: white;
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+            border: 2px solid white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .hero-button:hover {
+            background-color: #8bc34a;
+            transform: scale(1.05);
+        }
+        
+        /* FEATURES SECTION */
+        .section-title {
+            color: #2d5016;
+            text-align: center;
+            font-size: 36px;
+            margin: 50px 0 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #e9f4e1;
+        }
+        
+        .features-container {
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .feature-row {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .feature-box {
+            width: 32%;
+            float: left;
+            margin-right: 2%;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 2px solid #e9f4e1;
+        }
+        
+        .feature-box.last {
+            margin-right: 0;
+        }
+        
+        .feature-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .feature-content {
+            padding: 25px;
+        }
+        
+        .feature-box h3 {
+            color: #2d5016;
+            margin-bottom: 15px;
+            font-size: 22px;
+            text-align: center;
+        }
+        
+        /* STATS SECTION */
+        .stats-section {
+            background: linear-gradient(rgba(45, 80, 22, 0.9), rgba(74, 124, 42, 0.95)),
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 40px;
+            border-radius: 10px;
+            margin: 50px 0;
+            text-align: center;
+            clear: both;
+            border: 3px solid white;
+        }
+        
+        .stats-title {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stats-row {
+            width: 100%;
+        }
+        
+        .stat-box {
+            width: 23%;
+            float: left;
+            margin-right: 2.66%;
+            text-align: center;
+        }
+        
+        .stat-box.last {
+            margin-right: 0;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #e9f4e1;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stat-text {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* TESTIMONIAL */
+        .testimonial-box {
+            background: white url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09');
+            background-size: cover;
+            background-position: center;
+            padding: 50px 40px;
+            border-radius: 10px;
+            margin: 50px 0;
+            border: 2px solid #e9f4e1;
+            clear: both;
+        }
+        
+        .testimonial-content {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 5px solid #4a7c2a;
+        }
+        
+        .testimonial-quote {
+            font-size: 22px;
+            font-style: italic;
+            color: #2d5016;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #4a7c2a;
+            font-size: 18px;
+        }
+        
+        /* GALLERY */
+        .gallery-container {
+            width: 100%;
+            margin: 50px 0;
+            clear: both;
+        }
+        
+        .gallery-row {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        
+        .gallery-item {
+            width: 32%;
+            float: left;
+            margin-right: 2%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            border: 2px solid white;
+        }
+        
+        .gallery-item.last {
+            margin-right: 0;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .gallery-caption {
+            background: #2d5016;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        /* TIPS SECTION */
+        .tips-section {
+            width: 100%;
+            margin: 50px 0;
+            clear: both;
+        }
+        
+        .tip-column {
+            width: 48%;
+            float: left;
+            margin-right: 4%;
+        }
+        
+        .tip-column.last {
+            margin-right: 0;
+        }
+        
+        .tip-box {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #4a7c2a;
+        }
+        
+        .tip-icon {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .tip-box h3 {
+            color: #2d5016;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        
+        /* FINAL CTA */
+        .final-cta {
+            background: linear-gradient(rgba(45, 80, 22, 0.9), rgba(74, 124, 42, 0.95)),
+                        url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e');
+            background-size: cover;
+            background-position: center;
+            padding: 70px 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            margin: 50px 0;
+            clear: both;
+            border: 3px solid white;
+        }
+        
+        .cta-title {
+            font-size: 38px;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        }
+        
+        .cta-text {
+            font-size: 22px;
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.6;
+        }
+        
+        /* Clear floats */
+        .clear-row {
+            clear: both;
+        }
+        
+        /* Simple fallback for very small screens */
+        .mobile-friendly {
+            width: 100%;
+            max-width: 100%;
+        }
+        
+    </style>
+</head>
+<body class="home-page">
+    <div class="page-overlay">
+        <div class="header-container">
+            <div class="logo">
+                <h1>🌿 Eco Living Guide</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="energy.html">Energy</a></li>
+                    <li><a href="recycling.html">Recycling</a></li>
+                    <li><a href="water.html">Water</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="transportation.html">Transportation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="clear"></div>
+        </div>
+
+        <div class="main-container mobile-friendly">
+            <!-- HERO SECTION -->
+            <section class="main-hero">
+                <h1 class="hero-title">Live Sustainably, Thrive Naturally</h1>
+                <p class="hero-text">Join our community of eco-conscious individuals making real changes. Simple steps, big impact for our planet's future.</p>
+                <a href="about.html" class="hero-button">Start Your Journey Today</a>
+            </section>
+
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &gt; Welcome to Sustainable Living
+            </div>
+
+            <!-- STATS SECTION -->
+            <section class="stats-section">
+                <h2 class="stats-title">Real Impact, Real Results</h2>
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <div class="stat-number">45%</div>
+                        <div class="stat-text">Average Energy Savings</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-text">Gallons Water Saved</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-text">Waste Reduction</div>
+                    </div>
+                    <div class="stat-box last">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-text">Free Access</div>
+                    </div>
+                </div>
+                <div class="clear-row"></div>
+            </section>
+
+            <!-- FEATURES -->
+            <h2 class="section-title">Explore Our Guides</h2>
+            
+            <div class="features-container">
+                <div class="feature-row">
+                    <div class="feature-box">
+                        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                             alt="Renewable Energy" 
+                             class="feature-image">
+                        <div class="feature-content">
+                            <h3>Energy Efficiency</h3>
+                            <p>Reduce energy consumption with smart home solutions and renewable energy options that save money and the planet.</p>
+                            <a href="energy.html" class="action-btn">View Energy Guide</a>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                             alt="Recycling Center" 
+                             class="feature-image">
+                        <div class="feature-content">
+                            <h3>Smart Recycling</h3>
+                            <p>Master waste management with comprehensive recycling guides, composting techniques, and reduction strategies.</p>
+                            <a href="recycling.html" class="action-btn">Learn Recycling</a>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box last">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                             alt="Water Conservation" 
+                             class="feature-image">
+                        <div class="feature-content">
+                            <h3>Water Wisdom</h3>
+                            <p>Save thousands of gallons with practical indoor/outdoor conservation methods and efficient water usage tips.</p>
+                            <a href="water.html" class="action-btn">Save Water Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear-row"></div>
+            </div>
+
+            <!-- TESTIMONIAL -->
+            <div class="testimonial-box">
+                <div class="testimonial-content">
+                    <p class="testimonial-quote">
+                        "This guide completely transformed my household. We cut our utility bills in half and reduced our carbon footprint significantly. The tips are practical and easy to implement!"
+                    </p>
+                    <p class="testimonial-author">- Michael Chen, Eco-conscious Parent</p>
+                </div>
+            </div>
+
+            <!-- GALLERY -->
+            <h2 class="section-title">Sustainable Living in Action</h2>
+            
+            <div class="gallery-container">
+                <div class="gallery-row">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                             alt="Solar Energy" 
+                             class="gallery-image">
+                        <div class="gallery-caption">Solar Power Solutions</div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1558640476-437a2e9b9d5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                             alt="Organic Garden" 
+                             class="gallery-image">
+                        <div class="gallery-caption">Organic Gardening</div>
+                    </div>
+                    
+                    <div class="gallery-item last">
+                        <img src="https://images.unsplash.com/photo-1528642474498-1af0c17fd8c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                             alt="Green Transportation" 
+                             class="gallery-image">
+                        <div class="gallery-caption">Eco Transportation</div>
+                    </div>
+                </div>
+                <div class="clear-row"></div>
+                
+                <div class="gallery-row">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1589923186741-7d1d6ccee3c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                             alt="Composting" 
+                             class="gallery-image">
+                        <div class="gallery-caption">Home Composting</div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                             alt="Energy Efficient Home" 
+                             class="gallery-image">
+                        <div class="gallery-caption">Efficient Homes</div>
+                    </div>
+                    
+                    <div class="gallery-item last">
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" 
+                             alt="Clean Energy" 
+                             class="gallery-image">
+                        <div class="gallery-caption">Clean Energy Future</div>
+                    </div>
+                </div>
+                <div class="clear-row"></div>
+            </div>
+
+            <!-- TIPS SECTION -->
+            <div class="tips-section">
+                <div class="tip-column">
+                    <div class="tip-box">
+                        <span class="tip-icon">💡</span>
+                        <h3>Quick Start Tips</h3>
+                        <ul class="tips-list">
+                            <li>Switch to LED lighting throughout your home</li>
+                            <li>Install low-flow showerheads and faucets</li>
+                            <li>Start a backyard compost bin</li>
+                            <li>Use reusable bags and containers</li>
+                            <li>Unplug electronics when not in use</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tip-column last">
+                    <div class="tip-box">
+                        <span class="tip-icon">🌍</span>
+                        <h3>Benefits You'll See</h3>
+                        <ul class="tips-list">
+                            <li>30-50% reduction in utility bills</li>
+                            <li>Healthier indoor air quality</li>
+                            <li>Reduced carbon footprint</li>
+                            <li>Less waste sent to landfills</li>
+                            <li>Support for local ecosystems</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear-row"></div>
+            </div>
+
+            <!-- FINAL CTA -->
+            <section class="final-cta">
+                <h2 class="cta-title">Ready to Make a Difference?</h2>
+                <p class="cta-text">
+                    Join thousands of environmentally conscious individuals who are transforming their lives and protecting our planet. Start your sustainable journey today with our comprehensive, easy-to-follow guides.
+                </p>
+                <a href="energy.html" class="hero-button">Get Started Now</a>
+            </section>
+        </div>
+
+        <div class="footer">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <p>© 2025 Eco Living Guide | Individual Capstone Project</p>
+                    <p>Practical sustainability for everyday living</p>
+                </div>
+                <div class="footer-right">
+                    <p><a href="index.html" class="footer-link">Home</a> | <a href="contact.html" class="footer-link">Contact</a></p>
+                    <p>Made with 🌿 for our planet</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
